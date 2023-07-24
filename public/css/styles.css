@@ -1,0 +1,22 @@
+/* public/css/styles.css */
+body {
+    padding-top: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn-primary,
+.btn-secondary {
+    margin-top: 10px;
+}

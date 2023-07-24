@@ -10,7 +10,7 @@ Pré-requisitos:
 Docker instalado e configurado no sistema.
 
 Passo 1: Clonar o repositório:
-git clone git@github.com:TheusVitor/DomPixelShop.git
+git clone https://github.com/TheusVitor/DomPixelShop.git
 
 Passo 2: Configurar o ambiente com Docker
 docker-compose up -d

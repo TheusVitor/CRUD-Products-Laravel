@@ -33,6 +33,7 @@ class ProductController extends Controller
             $messages = [
                 'name.required' => 'O nome do produto deve ser preenchido.',
                 'price.required' => 'O preço do produto deve ser preenchido.',
+                'price.numeric' => 'Informe um preço do produto válido.',
                 'description.required' => 'A descrição do produto deve ser preenchido.',
                 'quantity.required' => 'A quantidade do produto deve ser preenchida.',
             ];
@@ -40,7 +41,7 @@ class ProductController extends Controller
             $rules = [
                 'name' => 'required',
                 'description' => 'required',
-                'price' => 'required',
+                'price' => 'required|numeric',
                 'quantity' => 'required',
             ];
 
