@@ -1,0 +1,32 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www/html
+        depends_on:
+            - db
+
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile # Arquivo Dockerfile para configurar a imagem do PHP
+        volumes:
+            - .:/var/www/html # Caminho para os arquivos do seu projeto Laravel
+        command: php artisan serve --host=0.0.0.0 --port=8000
+
+    db:
+        image: mysql:8
+        environment:
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_DATABASE: laravel_db
+            MYSQL_USER: laravel_user
+            MYSQL_PASSWORD: laravel_password
+        volumes:
+            - db_data:/var/lib/mysql
+
+volumes:
+    db_data:
